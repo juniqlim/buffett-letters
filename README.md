@@ -6,7 +6,7 @@
 
 | 폴더 | 내용 | 연도 | 출처 |
 |---|---|---|---|
-| `shareholder-letters/` | 버크셔 해서웨이 주주서한 | 1969, 1971–2025 | [berkshirehathaway.com](https://www.berkshirehathaway.com/letters/letters.html), [초기분 묶음](https://assets.empirefinancialresearch.com/uploads/2021/02/Buffett-Letters-1969-76.pdf) |
+| `shareholder-letters/` | 버크셔 해서웨이 주주서한 | 1969–2025 | [berkshirehathaway.com](https://www.berkshirehathaway.com/letters/letters.html), [초기분 묶음](https://assets.empirefinancialresearch.com/uploads/2021/02/Buffett-Letters-1969-76.pdf), [1970](https://archive.org/details/berkshirehathawayannualreports) |
 | `partnership-letters/` | 버핏 파트너십 서한 (묶음본) | 1957–1970 | [buysidedigest.com](https://www.buysidedigest.com/) |
 
 각 폴더 아래:
@@ -19,16 +19,10 @@
   - 1977–1997: HTML 원본
   - 1998–2025: PDF 원본 (1998–2003은 공식 페이지가 PDF로 연결되는 래퍼라 PDF를 받음)
 - **1969, 1971–1976 주주서한**: 공식 미게시분. 무료 묶음 PDF(`original/1969-1976.pdf`)를 받아 연도별 Markdown으로 분할(`scripts/split_early.py`). 원본은 묶음 1개, Markdown은 연도별로 존재.
+- **1970 주주서한**: 무료 묶음본 2종(empire·safalniveshak)이 모두 건너뛴 유일 공백이었다. [archive.org의 1970 연차보고서](https://archive.org/details/berkshirehathawayannualreports)(검색가능 스캔본)에서 받아 Chairman's Letter만 추출(`scripts/fetch_1970.sh`). `original/1970.pdf`는 서한이 아니라 **연차보고서 전체**(재무제표 포함)이고, `markdown/1970.md`는 서한 부분만 담는다. OCR 기반이라 극소수 표기 흔적이 있을 수 있다.
 - **1957–1970 파트너십 서한**: 개별 파일이 아닌 단일 묶음 PDF.
 
-### 공백: 회계연도 1970 버크셔 서한
-
-1970 서한(1971-03 서명, Kenneth Chase 명의)은 **존재하나 미수록**이다. 이유:
-- 공식 사이트는 1977년치부터만 게시.
-- 무료 묶음본(empirefinancialresearch, safalniveshak) 둘 다 1969·1971–1976만 담고 **1970을 건너뜀**.
-- 유일하게 확인된 무료 단독 출처(`theoraclesclassroom.com`의 1970 연차보고서 PDF)는 구축 환경의 네트워크 필터가 도메인을 차단해 받지 못함.
-
-온전한 1970 서한은 Max Olson의 유료 책(*Berkshire Hathaway Letters to Shareholders, 1965–*)이나 위 차단 도메인에서 직접 받을 수 있다.
+이로써 주주서한은 **1969–2025 전 연도 완비**(공백 없음).
 
 ## 재현
 
