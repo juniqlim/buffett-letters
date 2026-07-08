@@ -28,11 +28,17 @@ for y in $(seq 2004 2025); do
   get "$BASE/${y}ltr.pdf" "$ROOT/shareholder-letters/original/$y.pdf"
 done
 
+echo "== Early shareholder letters 1969,1971-1976 (bundled PDF) =="
+# Free compilations omit fiscal 1970; only 1969 and 1971-1976 are present here.
+get "https://assets.empirefinancialresearch.com/uploads/2021/02/Buffett-Letters-1969-76.pdf" \
+    "$ROOT/shareholder-letters/original/1969-1976.pdf"
+
 echo "== Partnership letters 1957-1970 (bundled PDF) =="
 get "https://www.buysidedigest.com/wp-content/uploads/2024/08/Warren-Buffett-Partnership-letters-1957-1970r.pdf" \
     "$ROOT/partnership-letters/original/buffett-partnership-letters-1957-1970.pdf"
 
 echo "== Convert to Markdown =="
 python3 "$ROOT/scripts/convert.py"
+python3 "$ROOT/scripts/split_early.py"
 
 echo "Done."
