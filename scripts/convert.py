@@ -27,8 +27,8 @@ def pdf_to_md(src: Path, dst: Path) -> None:
 def convert_dir(orig: Path, mdout: Path) -> None:
     mdout.mkdir(parents=True, exist_ok=True)
     for src in sorted(orig.iterdir()):
-        if src.stem == "1969-1976":
-            continue  # handled by split_early.py (per-year output)
+        if src.stem in ("1969-1976", "1970"):
+            continue  # 1969-1976: split_early.py, 1970: fetch_1970.sh (서한만 추출)
         dst = mdout / (src.stem + ".md")
         if src.suffix == ".html":
             html_to_md(src, dst)

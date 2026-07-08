@@ -39,6 +39,8 @@ get "https://www.buysidedigest.com/wp-content/uploads/2024/08/Warren-Buffett-Par
 
 echo "== Convert to Markdown =="
 python3 "$ROOT/scripts/convert.py"
-python3 "$ROOT/scripts/split_early.py"
+python3 "$ROOT/scripts/split_early.py"        # 1969-1976 묶음 -> 연도별
+python3 "$ROOT/scripts/split_partnership.py"  # 1957-1970 묶음 -> 서한별
+python3 "$ROOT/scripts/fetch_1970.sh" >/dev/null 2>&1 || true  # 별도 소스
 
 echo "Done."

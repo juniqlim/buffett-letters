@@ -20,7 +20,8 @@
   - 1998–2025: PDF 원본 (1998–2003은 공식 페이지가 PDF로 연결되는 래퍼라 PDF를 받음)
 - **1969, 1971–1976 주주서한**: 공식 미게시분. 무료 묶음 PDF(`original/1969-1976.pdf`)를 받아 연도별 Markdown으로 분할(`scripts/split_early.py`). 원본은 묶음 1개, Markdown은 연도별로 존재.
 - **1970 주주서한**: 무료 묶음본 2종(empire·safalniveshak)이 모두 건너뛴 유일 공백이었다. [archive.org의 1970 연차보고서](https://archive.org/details/berkshirehathawayannualreports)(검색가능 스캔본)에서 받아 Chairman's Letter만 추출(`scripts/fetch_1970.sh`). `original/1970.pdf`는 서한이 아니라 **연차보고서 전체**(재무제표 포함)이고, `markdown/1970.md`는 서한 부분만 담는다. OCR 기반이라 극소수 표기 흔적이 있을 수 있다.
-- **1957–1970 파트너십 서한**: 개별 파일이 아닌 단일 묶음 PDF.
+- **1957–1970 파트너십 서한**: 원본은 단일 묶음 PDF, Markdown은 **서한별 29개 파일**로 분할(`scripts/split_partnership.py`). 연차·반기·특별 서한이 모두 포함된다.
+  - 파일명은 각 서한의 **dateline(작성일) `YYYY-MM-DD`**. 연차 서한은 이듬해 1~2월에 쓰였으므로 파일명 연도가 대상 연도보다 1 크다(예: `1959-02-11.md` = 1958년 실적 연차 서한). `1957.md`만 OCR에 dateline이 없어 대상 연도로 명명.
 
 이로써 주주서한은 **1969–2025 전 연도 완비**(공백 없음).
 
